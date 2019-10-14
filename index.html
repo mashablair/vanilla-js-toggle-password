@@ -57,17 +57,17 @@
   </form>
 
   <script>
-    var checkbox = document.getElementById("show-password");
-    var input_password = document.getElementById("password");
-    // add event listener to checkbox change (checked or not)
-    checkbox.addEventListener("change", function () {
-      if (this.checked) {
+    (function () {
+      "use strict";
+      var checkbox = document.getElementById("show-password");
+      var input_password = document.getElementById("password");
+
+      // add event listener to checkbox change (checked or not)
+      checkbox.addEventListener("change", function () {
         // if checked, it turns this input field into plain text input
-        input_password.type = "text";
-      } else {
-        input_password.type = "password";
-      }
-    }, false);
+        input_password.type = this.checked ? "text" : "password";
+      }, false);
+    })();
   </script>
 </body>
 
