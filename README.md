@@ -1,4 +1,6 @@
-#Toggle password visibility with Vanilla JS
-Project 1 of Vanilla JS Academy
+# Toggle password visibility
+Vanilla JS script that toggles the visibility of a password input field.
 
-##View Demo
+Project 1 of [Vanilla JS Academy](https://vanillajsacademy.com/)
+
+[View Demo](https://)
