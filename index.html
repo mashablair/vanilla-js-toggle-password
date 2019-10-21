@@ -68,8 +68,11 @@
       // add event listener to checkbox change (checked or not)
       checkbox.addEventListener("change", function () {
         // loop through all inputs w/ type password
-        input_passwords.forEach(item => item.type = this.checked ? "text" : "password");
-        // if checked, it turns this input field into plain text input
+        // arrow function keeps value of 'this' assigned to a checkbox
+        input_passwords.forEach(item => {
+          // if checked, it turns this input field into plain text input
+          item.type = this.checked ? "text" : "password"
+        });
       }, false);
     })();
   </script>
