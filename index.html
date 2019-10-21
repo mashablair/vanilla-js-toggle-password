@@ -38,37 +38,38 @@
 
   <form>
     <div>
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username">
+      <label for="current-password">Current Password</label>
+      <input type="password" name="current-password" id="current-password">
     </div>
 
     <div>
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password">
+      <label for="new-password">New Password</label>
+      <input type="password" name="new-password" id="new-password">
     </div>
 
     <div>
-      <label for="show-password">
-        <input type="checkbox" name="show-passwords" id="show-password">
-        Show password
+      <label for="show-passwords">
+        <input type="checkbox" name="show-passwords" id="show-passwords">
+        Show passwords
       </label>
     </div>
 
     <p>
-      <button type="submit">Log In</button>
+      <button type="submit">Change Passwords</button>
     </p>
   </form>
 
   <script>
     (function () {
       "use strict";
-      var checkbox = document.getElementById("show-password");
-      var input_password = document.getElementById("password");
+      var checkbox = document.getElementById("show-passwords");
+      var input_passwords = Array.from(document.querySelectorAll('[type="password"]'));
 
       // add event listener to checkbox change (checked or not)
       checkbox.addEventListener("change", function () {
+        // loop through all inputs w/ type password
+        input_passwords.forEach(item => item.type = this.checked ? "text" : "password");
         // if checked, it turns this input field into plain text input
-        input_password.type = this.checked ? "text" : "password";
       }, false);
     })();
   </script>
